@@ -208,6 +208,9 @@ return new Action<IConfigContext>((IConfigContext context) =>
     manager.Subscribe(alt, Keys.J, () => workspaces.FocusedWorkspace.FocusPreviousWindow(), "focus prev window");
 
     manager.Subscribe(alt, Keys.P, () => actionMenu.ShowMenu(actionMenuBuilder), "show menu");
+
+    manager.Subscribe(alt, Keys.B, () => System.Diagnostics.Process.Start("vivaldi"), "Open Browser");
+    manager.Subscribe(alt, Keys.N, () => System.Diagnostics.Process.Start("vivaldi --incognito"), "Open Private Browser");
   };
   setKeybindings();
 });
