@@ -13,6 +13,7 @@ using workspacer.Bar;
 using workspacer.Bar.Widgets;
 using workspacer.ActionMenu;
 using workspacer.FocusIndicator;
+using System.Diagnostics;
 
 return new Action<IConfigContext>((IConfigContext context) =>
 {
@@ -159,6 +160,10 @@ return new Action<IConfigContext>((IConfigContext context) =>
     menuBuilder.Add("toggle enabled", () => context.Enabled = !context.Enabled);
     menuBuilder.Add("restart", () => context.Restart());
     menuBuilder.Add("quit", () => context.Quit());
+
+    string shutdownCmd;
+    shutdownCmd = "/C shutdown /s /t 0";
+    menuBuilder.Add("shutdown", () => System.Diagnostics.Process.Start("CMD.exe", shutdownCmd));
 
     return menuBuilder;
   };
