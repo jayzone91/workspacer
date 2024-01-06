@@ -80,6 +80,7 @@ return new Action<IConfigContext>((IConfigContext context) =>
   // Filters
   context.WindowRouter.AddFilter((window) => !window.Title.Contains("iCloud-Passwörter"));
   context.WindowRouter.AddFilter((window) => !window.Title.Contains("PS Remote Play"));
+  context.WindowRouter.AddFilter((window) => !window.Title.Contains("Hyper-V-Manager"));
 
   // Action Menu
   var actionMenu = context.AddActionMenu(new ActionMenuPluginConfig()
