@@ -84,7 +84,7 @@ return new Action<IConfigContext>((IConfigContext context) =>
   var actionMenu = context.AddActionMenu(new ActionMenuPluginConfig()
   {
     RegisterKeybind = false,
-    MenuHeight = barHeight,
+    MenuHeight = barHeight * 2,
     FontSize = fontSize,
     FontName = fontName,
     Background = background
