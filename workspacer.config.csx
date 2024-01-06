@@ -79,6 +79,7 @@ return new Action<IConfigContext>((IConfigContext context) =>
 
   // Filters
   context.WindowRouter.AddFilter((window) => !window.Title.Contains("iCloud-Passwörter"));
+  context.WindowRouter.AddFilter((window) => !window.Title.Contains("PS Remote Play"));
 
   // Action Menu
   var actionMenu = context.AddActionMenu(new ActionMenuPluginConfig()
